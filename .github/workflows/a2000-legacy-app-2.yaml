@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-          folder: [a2000-legacy-app-2/folder1]
+          folder: [a2000-legacy-app-2/folder-1]
     
     steps:
       # checkout repository
@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        folder: [a2000-legacy-app-2/folder2]
+        folder: [a2000-legacy-app-2/folder-2]
     
     steps:
       # checkout repository
@@ -65,7 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        folder: [a2000-legacy-app-2/folder2]
+        folder: [a2000-legacy-app-2/folder-3]
     
     steps:
       # checkout repository
