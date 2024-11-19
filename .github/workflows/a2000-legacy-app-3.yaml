@@ -34,7 +34,7 @@ jobs:
         run: |
           echo "Processing folder: ${{ matrix.folder }}"
           if [ -f "${{ matrix.folder }}/script20.sh" ]; then
-            bash "${{ matrix.folder }}/script21.sh"
+            bash "${{ matrix.folder }}/script20.sh"
           else
             echo "No script found in ${{ matrix.folder }}"
           fi
