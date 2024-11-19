@@ -29,13 +29,13 @@ jobs:
      uses: ./.github/workflows/a2000-legacy-app-1.yml
      with: 
       environment : "qa"
-      testtype: "FT"
-      jobname: "job1"
+      testtype: "PT"
+    #  jobname: "job1"
 
   a2000-legacy-app-2:
      if: ${{ github.event.inputs.a2000-legacy-app-2 == 'true'}} || ${{ github.event.client_payload.a2000-legacy-app-2 == 'true' }}
      uses: ./.github/workflows/a2000-legacy-app-2.yml
      with: 
       environment : "qa"
-      testtype: "FT"
-      jobname: "job1"
+      testtype: "PT"
+     # jobname: "job1"
