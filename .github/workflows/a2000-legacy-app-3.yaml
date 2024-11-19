@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-          folder: [DeterAPI1]
+          folder: [a2000-legacy-app-3/poc-1]
     
     steps:
       # checkout repository
@@ -33,9 +33,8 @@ jobs:
       - name: Run Script
         run: |
           echo "Processing folder: ${{ matrix.folder }}"
-          if [ -f "${{ matrix.folder }}/script1.sh" ]; then
-            bash "${{ matrix.folder }}/script1.sh"
-            bash "${{ matrix.folder }}/script2.sh"
+          if [ -f "${{ matrix.folder }}/script20.sh" ]; then
+            bash "${{ matrix.folder }}/script21.sh"
           else
             echo "No script found in ${{ matrix.folder }}"
           fi
@@ -44,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        folder: [DeterUI]
+        folder: [a2000-legacy-app-3/poc-2]
     
     steps:
       # checkout repository
@@ -54,9 +53,8 @@ jobs:
       - name: Run Script
         run: |
           echo "Processing folder: ${{ matrix.folder }}"
-          if [ -f "${{ matrix.folder }}/script1.sh" ]; then
-            bash "${{ matrix.folder }}/script1.sh"
-            bash "${{ matrix.folder }}/script2.sh"
+          if [ -f "${{ matrix.folder }}/script21.sh" ]; then
+            bash "${{ matrix.folder }}/script21.sh"
           else
             echo "No script found in ${{ matrix.folder }}"
           fi
