@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        folder: [DeterUI]
+        folder: [a2000-legacy-app-1/DeterUI]
     
     steps:
       # checkout repository
@@ -65,7 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        folder: [DeterAPI2]
+        folder: [a2000-legacy-app-1/DeterAPI2]
     
     steps:
       # checkout repository
