@@ -1,40 +1,22 @@
-name: PT workflow
-on: 
-  repository_dispatch:
-    types: [trigger_PT_workflow]
-  workflow_dispatch:
-    inputs:
-      a2000-legacy-app-1:
-        type: boolean
-        description: a2000-legacy-app-1
-        default: false
+name: Main Workflow
 
-      a2000-legacy-app-2:
-        type: boolean
-        description: a2000-legacy-app-2
-        default: false
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  PT:
+  call-reusable-workflows:
     runs-on: ubuntu-latest
     steps:
-      - name: Check input parameter
-        run: |
-          echo "component one: ${{ github.event.inputs.a2000-legacy-app-1 }}" 
-          echo "component two: ${{ github.event.inputs.a2000-legacy-app-2 }}"
-          echo "component one: ${{ github.event.client_payload.a2000-legacy-app-1 }}"
-          echo "component two: ${{ github.event.client_payload.a2000-legacy-app-2 }}"
+      - name: Call Workflow for a2000-legacy-app-1
+        uses: ./.github/workflows/a2000-legacy-app-1.yml
+        with:
+          environment: "qa"
+          testtype: "PT"
 
-  a2000-legacy-app-1:
-    if: ${{ github.event.inputs.a2000-legacy-app-1 == 'true' }} || ${{ github.event.client_payload.a2000-legacy-app-1 == 'true' }}
-    uses: ./.github/workflows/a2000-legacy-app-1.yml
-    with: 
-      environment: "qa"
-      testtype: "PT"
-
-  a2000-legacy-app-2:
-    if: ${{ github.event.inputs.a2000-legacy-app-2 == 'true' }} || ${{ github.event.client_payload.a2000-legacy-app-2 == 'true' }}
-    uses: ./.github/workflows/a2000-legacy-app-2.yml
-    with: 
-      environment: "qa"
-      testtype: "PT"
+      - name: Call Workflow for a2000-legacy-app-2
+        uses: ./.github/workflows/a2000-legacy-app-2.yml
+        with:
+          environment: "qa"
+          testtype: "PT"
