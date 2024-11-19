@@ -9,6 +9,7 @@ on:
         description: a2000-legacy-app-1
         default: false
 
+
       a2000-legacy-app-2:
         type: boolean
         description: a2000-legacy-app-2
