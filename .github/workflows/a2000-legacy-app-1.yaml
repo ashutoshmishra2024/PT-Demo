@@ -34,12 +34,12 @@ jobs:
 
       - name: Run Script
         run: |
-          echo "Processing folder: $matrix.component1/{{ matrix.folder }}"
-          if [ -f "$matrix.component1/{{ matrix.folder }}/script1.sh" ]; then
-            bash "$matrix.component11/{{ matrix.folder }}/script1.sh"
-            bash "$matrix.component/{{ matrix.folder }}/script2.sh"
+          echo "Processing folder: $/matrix.component1/{{ matrix.folder }}"
+          if [ -f "$/matrix.component1/{{ matrix.folder }}/script1.sh" ]; then
+            bash "$/matrix.component11/{{ matrix.folder }}/script1.sh"
+            bash "$/matrix.component/{{ matrix.folder }}/script2.sh"
           else
-            echo "No script found in $matrix.component1/{{ matrix.folder }}"
+            echo "No script found in $/matrix.component1/{{ matrix.folder }}"
           fi
   job2-ui:
     needs: job1-api
