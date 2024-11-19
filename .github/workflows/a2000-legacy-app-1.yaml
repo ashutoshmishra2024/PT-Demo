@@ -5,7 +5,6 @@ on:
     branches:
       - main
 
-
 jobs:  
   job1-api:
     runs-on: ubuntu-latest
@@ -54,12 +53,12 @@ jobs:
 
       - name: Run Script
         run: |
-          echo "Processing folder: $matrix.component1/{{ matrix.folder }}"
-          if [ -f "$matrix.component1/{{ matrix.folder }}/script1.sh" ]; then
-            bash "$matrix.component1/{{ matrix.folder }}/script1.sh"
-            bash "$matrix.component1/{{ matrix.folder }}/script2.sh"
+          echo "Processing folder: ${{ matrix.folder }}"
+          if [ -f "${{ matrix.folder }}/script1.sh" ]; then
+            bash "${{ matrix.folder }}/script1.sh"
+            bash "${{ matrix.folder }}/script2.sh"
           else
-            echo "No script found in $matrix.component1/{{ matrix.folder }}"
+            echo "No script found in ${{ matrix.folder }}"
           fi
   job3-api:
     needs: job2-ui
@@ -75,11 +74,11 @@ jobs:
 
       - name: Run Script
         run: |
-          echo "Processing folder: $matrix.component1/{{ matrix.folder }}"
-          if [ -f "$matrix.component1/{{ matrix.folder }}/script1.sh" ]; then
-            bash "$matrix.component1/{{ matrix.folder }}/script1.sh"
-            bash "$matrix.component1/{{ matrix.folder }}/script2.sh"
-            bash "$matrix.component1/{{ matrix.folder }}/script3.sh"
+          echo "Processing folder: ${{ matrix.folder }}"
+          if [ -f "${{ matrix.folder }}/script1.sh" ]; then
+            bash "${{ matrix.folder }}/script1.sh"
+            bash "${{ matrix.folder }}/script2.sh"
+            bash "${{ matrix.folder }}/script3.sh"
           else
-            echo "No script found in $matrix.component1/{{ matrix.folder }}"
+            echo "No script found in ${{ matrix.folder }}"
           fi
