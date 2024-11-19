@@ -33,9 +33,8 @@ jobs:
       - name: Run Script
         run: |
           echo "Processing folder: ${{ matrix.folder }}"
-          if [ -f "${{ matrix.folder }}/script1.sh" ]; then
-            bash "${{ matrix.folder }}/script1.sh"
-            bash "${{ matrix.folder }}/script2.sh"
+          if [ -f "${{ matrix.folder }}/script10.sh" ]; then
+            bash "${{ matrix.folder }}/script10.sh"
           else
             echo "No script found in ${{ matrix.folder }}"
           fi
@@ -54,9 +53,8 @@ jobs:
       - name: Run Script
         run: |
           echo "Processing folder: ${{ matrix.folder }}"
-          if [ -f "${{ matrix.folder }}/script1.sh" ]; then
-            bash "${{ matrix.folder }}/script1.sh"
-            bash "${{ matrix.folder }}/script2.sh"
+          if [ -f "${{ matrix.folder }}/script11.sh" ]; then
+            bash "${{ matrix.folder }}/script11.sh"
           else
             echo "No script found in ${{ matrix.folder }}"
           fi
@@ -75,10 +73,8 @@ jobs:
       - name: Run Script
         run: |
           echo "Processing folder: ${{ matrix.folder }}"
-          if [ -f "${{ matrix.folder }}/script1.sh" ]; then
-            bash "${{ matrix.folder }}/script1.sh"
-            bash "${{ matrix.folder }}/script2.sh"
-            bash "${{ matrix.folder }}/script3.sh"
+          if [ -f "${{ matrix.folder }}/script12.sh" ]; then
+            bash "${{ matrix.folder }}/script12.sh"
           else
             echo "No script found in ${{ matrix.folder }}"
           fi
