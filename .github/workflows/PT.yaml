@@ -4,12 +4,12 @@ on:
     types: [trigger_PT_workflow]
   workflow_dispatch:
     inputs:
-      Component1:
+      a2000-legacy-app-1:
         type: boolean
         description: a2000-legacy-app-1
         default: false
 
-      Component2:
+      a2000-legacy-app-2:
         type: boolean
         description: a2000-legacy-app-2
         default: false
