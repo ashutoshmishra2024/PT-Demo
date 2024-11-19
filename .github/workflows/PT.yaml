@@ -11,12 +11,6 @@ jobs:
     steps:
       - name: Call Workflow for a2000-legacy-app-1
         uses: ./.github/workflows/a2000-legacy-app-1.yml
-        with:
-          environment: "qa"
-          testtype: "PT"
-
+       
       - name: Call Workflow for a2000-legacy-app-2
         uses: ./.github/workflows/a2000-legacy-app-2.yml
-        with:
-          environment: "qa"
-          testtype: "PT"
