@@ -8,3 +8,4 @@ jobs:
     uses: ./.github/workflows/a2000-dete-app.yml
     with: 
         JmeterAPIscript1 : "DeterAPI/script1.sh"
+        
