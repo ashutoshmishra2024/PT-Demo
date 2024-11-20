@@ -17,7 +17,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run Folder 1 Script a2000-legacy-app-1)
+      - name: Run DeterAPI1 Script a2000-legacy-app-1)
         working-directory: a2000-legacy-app-1/DeterAPI1
         run: |
           # Replace with your script command
@@ -32,7 +32,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run Folder 2 Script (a2000-legacy-app-1)
+      - name: Run DeterUI Script (a2000-legacy-app-1)
         working-directory: a2000-legacy-app-1/DeterUI
         run: |
           # Replace with your script command
