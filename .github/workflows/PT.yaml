@@ -6,6 +6,4 @@ jobs:
   a2000-dete-app1:
     if: ${{ github.event.inputs.a2000-dete-app1 == 'true'}}
     uses: ./.github/workflows/a2000-dete-app1.yml
-    with: 
-        JmeterAPIscript1 : "DeterAPI/script1.sh"
-        
+   
