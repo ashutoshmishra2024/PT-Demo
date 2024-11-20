@@ -25,20 +25,20 @@ jobs:
           bash script1.sh
           bash script2.sh
 
-  a2000-legacy-app-1-DeterUI:
-    name: a2000-legacy-app-1 - DeterUI
-    needs: a2000-legacy-app-1-DeterAPI1 # Ensure sequential execution
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+  # a2000-legacy-app-1-DeterUI:
+  #   name: a2000-legacy-app-1 - DeterUI
+  #   needs: a2000-legacy-app-1-DeterAPI1 # Ensure sequential execution
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v3
 
-      - name: Run DeterUI Script (a2000-legacy-app-1)
-        working-directory: a2000-legacy-app-1/DeterUI
-        run: |
-          # Replace with your script command
-          ./script1.sh
-
+  #     - name: Run DeterUI Script (a2000-legacy-app-1)
+  #       working-directory: a2000-legacy-app-1/DeterUI
+  #       run: |
+  #         # Replace with your script command
+  #         ./script1.sh
+  #
   # # Second Component - a2000-legacy-app-2
   # a2000-legacy-app-2-folder1:
   #   name: a2000-legacy-app-2 - folder-1
