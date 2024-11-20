@@ -1,16 +1,44 @@
-name: Main Workflow
+name: PT workflow
+on: 
+  repository_dispatch:
+    types: [trigger_PT_workflow]
+  workflow_dispatch:
+    inputs:
+      Component1:
+        type: boolean
+        description: Component1
+        default: false
 
-on:
-  push:
-    branches:
-      - main
+
+      Component2:
+        type: boolean
+        description: Component2
+        default: false
 
 jobs:
-  call-reusable-workflows:
+  PT:
     runs-on: ubuntu-latest
     steps:
-      - name: Call Workflow for a2000-legacy-app-1
-        uses: ./.github/workflows/a2000-legacy-app-1.yml
-       
-      - name: Call Workflow for a2000-legacy-app-2
-        uses: ./.github/workflows/a2000-legacy-app-2.yml
+     
+    - name: check input parameter
+      run: |
+        echo "component one" ${{ github.event.inputs.Component1 }} 
+        echo " component two "${{ github.event.inputs.Component2 }}
+        echo " component one: ${{ github.event.client_payload.Component1 }}
+        echo " component Two: ${{ github.event.client_payload.Component2 }}
+
+  Component1:
+     if: ${{ github.event.inputs.Component1 == 'true'}} || ${{ github.event.client_payload.Component1 == 'true' }}
+     uses: ./.github/workflows/component1.yml
+     with: 
+      environment : "qa"
+      testtype: "FT"
+      jobname: "job1"
+
+  Component2:
+     if: ${{ github.event.inputs.Component2 == 'true'}} || ${{ github.event.client_payload.Component2 == 'true' }}
+     uses: ./.github/workflows/component2.yml
+     with: 
+      environment : "qa"
+      testtype: "FT"
+      jobname: "job1"
