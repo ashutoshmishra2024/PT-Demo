@@ -1,44 +1,10 @@
-name: PT workflow
+name: main workflow
 on: 
-  repository_dispatch:
-    types: [trigger_PT_workflow]
+
   workflow_dispatch:
-    inputs:
-      Component1:
-        type: boolean
-        description: Component1
-        default: false
-
-
-      Component2:
-        type: boolean
-        description: Component2
-        default: false
-
 jobs:
-  PT:
-    runs-on: ubuntu-latest
-    steps:
-     
-    - name: check input parameter
-      run: |
-        echo "component one" ${{ github.event.inputs.Component1 }} 
-        echo " component two "${{ github.event.inputs.Component2 }}
-        echo " component one: ${{ github.event.client_payload.Component1 }}
-        echo " component Two: ${{ github.event.client_payload.Component2 }}
-
-  Component1:
-     if: ${{ github.event.inputs.Component1 == 'true'}} || ${{ github.event.client_payload.Component1 == 'true' }}
-     uses: ./.github/workflows/component1.yml
-     with: 
-      environment : "qa"
-      testtype: "FT"
-      jobname: "job1"
-
-  Component2:
-     if: ${{ github.event.inputs.Component2 == 'true'}} || ${{ github.event.client_payload.Component2 == 'true' }}
-     uses: ./.github/workflows/component2.yml
-     with: 
-      environment : "qa"
-      testtype: "FT"
-      jobname: "job1"
+  a2000-dete-app:
+    if: ${{ github.event.inputs.a2000-dete-app1 == 'true'}}
+    uses: ./.github/workflows/a2000-dete-app.yml
+    with: 
+        JmeterAPIscript1 : "DeterAPI/script1.sh"
