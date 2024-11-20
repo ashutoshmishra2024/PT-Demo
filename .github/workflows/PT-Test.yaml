@@ -11,32 +11,32 @@ on:
 jobs:
   # a2000-legacy-app-1 - DeterAPI1
   a2000-legacy-app-1-DeterAPI1:
-    name: a2000-legacy-app - DeterAPI1
+    name: a2000-legacy-app-1 - DeterAPI1
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run Folder 1 Script a2000-legacy-app)
-        working-directory: a2000-legacy-app/DeterAPI1
+      - name: Run Folder 1 Script a2000-legacy-app-1)
+        working-directory: a2000-legacy-app-1/DeterAPI1
         run: |
           # Replace with your script command
           ./script1.sh
           ./script2.sh
 
-  componentA-folder2:
-    name: Component A - Folder 2
-    needs: componentA-folder1 # Ensure sequential execution
+  a2000-legacy-app-1-DeterUI:
+    name: a2000-legacy-app-1 - DeterUI
+    needs: a2000-legacy-app-1-DeterAPI1 # Ensure sequential execution
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run Folder 2 Script (Component A)
-        working-directory: componentA/folder2
+      - name: Run Folder 2 Script (a2000-legacy-app-1)
+        working-directory: a2000-legacy-app-1/DeterUI
         run: |
           # Replace with your script command
-          ./your-script.sh
+          ./script1.sh
 
   # Second Component - Component B
   componentB-folder1:
