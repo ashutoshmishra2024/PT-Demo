@@ -22,8 +22,8 @@ jobs:
         run: |
           # Replace with your script command
       - name: Run your script
-          .DeterAPI1/script1.sh
-          .DeterAPI1/script2.sh
+          bash script1.sh
+          bash script2.sh
 
   a2000-legacy-app-1-DeterUI:
     name: a2000-legacy-app-1 - DeterUI
