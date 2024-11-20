@@ -38,30 +38,30 @@ jobs:
           # Replace with your script command
           ./script1.sh
 
-  # Second Component - Component B
-  componentB-folder1:
-    name: Component B - Folder 1
+  # Second Component - a2000-legacy-app-2
+  a2000-legacy-app-2-folder1:
+    name: a2000-legacy-app-2 - folder-1
     runs-on: windows-latest # Different runner
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run Folder 1 Script (Component B)
-        working-directory: componentB/folder1
+      - name: Run folder-1 Script (a2000-legacy-app-2)
+        working-directory: a2000-legacy-app-2/folder-1
         run: |
           # Replace with your script command
-          .\your-script.ps1 # Example for PowerShell script
+          ./script10.sh # Example for PowerShell script
 
-  componentB-folder2:
-    name: Component B - Folder 2
-    needs: componentB-folder1 # Ensure sequential execution
+  a2000-legacy-app-2-folder-2:
+    name: a2000-legacy-app-2 - folder-2
+    needs: a2000-legacy-app-2-folder1 # Ensure sequential execution
     runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run Folder 2 Script (Component B)
-        working-directory: componentB/folder2
+      - name: Run Folder 2 Script (a2000-legacy-app-2)
+        working-directory: a2000-legacy-app-2/folder-2
         run: |
           # Replace with your script command
-          .\your-script.ps1
+          ./script11.sh
